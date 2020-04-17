@@ -1,0 +1,23 @@
+#This framework will do the same thing the previous one did , however it's written for working branch and not the master branch
+
+name: Java CI
+
+on:
+        push:
+                branches: [working]
+        pull_request:
+                branches: [working]
+
+jobs:
+        build:
+                
+                runs-on: ubuntu-latest
+                
+                steps:
+                - uses: actions/checkout@v2
+                - name: Set-up JDK 1.8
+                - uses: action/setup-java@v1
+                  with:
+                          java-version: 1.8
+                - name: BOB the Builder cmon
+                  run: cd weather-API && ./mvnw clean package
