@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +37,13 @@ public class WeatherController{
 
 
 	
+	@GetMapping("/test")
+	public String test(){
+		return "Lets have some fun";
+	}
+
         @GetMapping("/weather/current")
+        @CrossOrigin(origins="http://localhost:3000")
         public Weather current(@RequestParam(value="location" )String location) {
 
 		
@@ -105,6 +112,7 @@ public class WeatherController{
 
 
         @GetMapping("/weather/forecast")
+        @CrossOrigin(origins="http://localhost:3000")
         public String forecast(@RequestParam(value="lat")String lat,
                                @RequestParam(value="lon")String lon) {
 
