@@ -6,6 +6,10 @@ Info-Weather is a java application which uses Spring-boot framework to get weath
 
 * [java](https://java.com/en/download/help/download_options.xml) (tested on openjdk 11.0.6)
 * spring-boot framework
+for frontend
+* npm
+* nodejs
+* react
 
 
 # Usage
@@ -22,6 +26,16 @@ run the following command on Linux CLI
 ```
 
 ### Proceed only if there are no errors after running the previous command.
+
+### You can use the GUI from browser.(npm nodejs react required)
+Run the following commands.
+```bash
+cd Weather-API/weather-API/src/main/resources/webapp/reactjs
+```
+```bash
+npm start
+```
+
 
 
 * #### Current Weather
